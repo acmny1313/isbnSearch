@@ -1,0 +1,11 @@
+{
+  "name": "proxy-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/",
+  "scripts": {
+    "start": "proxy.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

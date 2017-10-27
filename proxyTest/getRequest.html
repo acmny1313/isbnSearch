@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Get Request</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script>
+            
+            function displayPrice(){
+                
+                //Listener for load event
+                function loadListener(){
+                    console.log("Loading was sucessful....." + "\nResponse:  " +  this.responseText)
+                } 
+                
+                //Listener for error event
+                function errListener(){
+                    console.log("A Error Occured" + "\nResponse:  " + this.response + "\nStatus:  "  + this.status
+                            + "\nReady State:  " + this.readyState)
+                }
+                
+                var xhr = new XMLHttpRequest();
+                var url = "http://booksrun.com/api/price/sell/1464108730?key=31u8ebhn43otn4uwa9df";
+               
+                
+               
+                xhr.addEventListener('load', loadListener);
+                xhr.addEventListener('error', errListener);
+                xhr.open('GET', url);
+               
+                //xhr.withCredentials = true;
+                //xhr.setRequestHeader('Access-Control-Allow-Origin', 'true');
+                
+                //xhr.responseType ='';
+               
+                
+                xhr.send();
+                
+            };
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="txtIn" value="Input"><br>
+            <input type="button" id="btnGo" Value="Submit" onclick="displayPrice()"><br>
+            <input type="text" id="txtOut" value="Output"><br>
+        </div>
+        
+       
+        
+    </body>
+</html>
